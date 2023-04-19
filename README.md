@@ -4,8 +4,7 @@
 
 ## Problem definition(Client identification)
 
-My client, Daiichiro, is a student of ISAK. He loves music very much and often listens to music subscription services. And one of the features in the subscription service is that you can register your favorite songs. However, although the favorite songs feature allows you to make a list of your favorite songs, it is difficult to create playlists by genre or by mood you want to listen to. For this reason, we need an application that allows us to create new lists of our favorite songs and listen to them by category. Compared to the analog method of writing in a notebook, the digital method is more efficient because the necessary data is saved each time, and the risk of loss is reduced. Also, with analog, it is easy to write down data, but very labor intensive to correct it. Also, sorting through a list of favorite songs is time-consuming. In contrast, digital data can be added, deleted, and rearranged in a snap. The application also allows you to enter information such as when the song was added, the author, the year it was released, and a link to the song's subscription application.
-and log it!
+私が今直面している問題が、私が作っているビジネスがホームブリューイングのキットを来るというものです。これをするに合ったって、現状日本ではホームブリューイングという文化が無いため。ビールのレシピを共有するソーシャルメディアが存在しないことに気が付きました。ここのブログなどでは、ビールのレシピやオリジナルな作り方を紹介しているものは存在しているものの。そのような情報を統合しているソーシャルメディアがあることでよりホームブリューイングの文化がより日本に根付かせることができます。そして、ビールにはとても個々のオリジナリティや地域性が出るものです。例えば、ホップ、麦芽をどこのものを使うかや、副原料をどのようなものを使うのか。そして、二次発酵時のブースト剤にどのような糖を使うのかなど多岐に渡ります。そのような情報やメソッドを、ホームブリューイングをしている人同士でシェアすることが難しいのが現状です。醸造所に行ったり、ビールづくり体験会などに行かない限り
 ## Proposed Solution
 
 ### Design Statement
