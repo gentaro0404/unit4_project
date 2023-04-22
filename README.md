@@ -8,6 +8,9 @@
 
 ## Proposed Solution
 私達の提案する解決策は、HTML SCC、そしてこのPythonを使用してウェブベースのソーシャルメディアを作成することです。このサイトは、ホームブリューイングの文化を日本で広め、ユーザーがビールのレシピや独自の製法を共有できるプラットフォームを提供します。
+
+
+## Raatinale for propsed solution
 このプロジェクトは、ホームブリューイングの文化がにひおんでまだ一般的でない問題に対して解決します。ウェブベースのソーシャルメディアサイトにより、情報やメソッドを簡単に共通できるようになりｍこのホームブリューイングに興味を持つ人々がある丸コミュニティが形成されることが予想できます。
 問題提議で述べたように、現在日本ではホームブリューイングにかんする情報得るのが難しいです。このウェブベースのソーシャルメディアにより、情報やメソッドを簡単に情報やアイデアを共有できる場を提供します。
 データ管理の観点kら、このプロジェクトでは、ユーザーがアップロードしたレシピやその画像、データを保存・管理するためのベータベースを設計します。Pythonで実装されたバックエンドシステムが、データの追加、編集、削除などの操作を処理します。
@@ -20,8 +23,8 @@ HTMLとCSSはウェブサイトの基本的な構造とスタイルを構築す�
 
 
 ### Design Statement
+私は、ホームブリューイングの情報を共有したいと思っているビール愛好家のクライアント向けに、ウェブベースのソーシャルメディアサイトを設計・制作します。このSNSは、ビールのレシピや独自の製法を共有・閲覧することを目的としており、CSS、HTML、およびPythonを使用して構築されます。制作期間は4週間を見込み、評価基準A、B、C、D、およびEに従って評価されます。"
 
-To meet the needs of my client, Daiichiro, I propose to create an application that will allow him to manage and organize his favorite songs. The application would allow him to create customized playlists based on his genre and mood, and to enter information such as the date the song was added, its author, year of release, and links to subscription services. The proposed solution is designed using Python as the primary programming language, KivyMD for the graphical user interface (GUI), and SQLAlchemy for database management.
 
 ### System Overview
 
