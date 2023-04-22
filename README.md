@@ -4,8 +4,10 @@
 
 ## Problem definition(Client identification)
 
-私が今直面している問題が、私が作っているビジネスがホームブリューイングのキットを来るというものです。これをするに合ったって、現状日本ではホームブリューイングという文化が無いため。ビールのレシピを共有するソーシャルメディアが存在しないことに気が付きました。ここのブログなどでは、ビールのレシピやオリジナルな作り方を紹介しているものは存在しているものの。そのような情報を統合しているソーシャルメディアがあることでよりホームブリューイングの文化がより日本に根付かせることができます。そして、ビールにはとても個々のオリジナリティや地域性が出るものです。例えば、ホップ、麦芽をどこのものを使うかや、副原料をどのようなものを使うのか。そして、二次発酵時のブースト剤にどのような糖を使うのかなど多岐に渡ります。そのような情報やメソッドを、ホームブリューイングをしている人同士でシェアすることが難しいのが現状です。醸造所に行ったり、ビールづくり体験会などに行かない限り
+私が今直面している問題が、私が作っているビジネスがホームブリューイングのキットを来るというものです。これをするに合ったって、現状日本ではホームブリューイングという文化が無いため。ビールのレシピを共有するソーシャルメディアが存在しないことに気が付きました。ここのブログなどでは、ビールのレシピやオリジナルな作り方を紹介しているものは存在しているものの。そのような情報を統合しているソーシャルメディアがあることでよりホームブリューイングの文化がより日本に根付かせることができます。そして、ビールにはとても個々のオリジナリティや地域性が出るものです。例えば、ホップ、麦芽をどこのものを使うかや、副原料をどのようなものを使うのか。そして、二次発酵時のブースト剤にどのような糖を使うのかなど多岐に渡ります。そのような情報やメソッドを、ホームブリューイングをしている人同士でシェアすることが難しいのが現状です。醸造所に行ったり、ビールづくり体験会などに行かない限りその情報を得ることができないのが現状です。その証拠として、実際にクライアントとの協議したメールをフォルダーに載せておきます。
+
 ## Proposed Solution
+クライアントの課題を解決するために、私はHTML CSSとPythonを使って、ウェブベースのソーシャルメディアサイトを作成します。このサイトでは、エンドユーザーが自分のビールレシピを共通し、他のユーザーも同様にレシピを共有することができます。
 
 ### Design Statement
 
@@ -42,13 +44,12 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## Success Criteria
 
-1. The application will have login,logout and register system.
-2. The application allows the user to enter all attributes (song title, release date, artist name, album name, genre,song link), which are stored in a database through an interface.
-3.  The application allows users to search and find songs by all attributes (song title, release date, artist name, album name, genre,song link).
-4.  The login information, such as the username, email and password, will be secured and the password will be encrypted through a hash.
-5.  The registration page will allow additional users to gain access to use the application.
-6.  The application is a GUI and displays a login page, registration page, home page, search page, additional logs, and a list of songs.
-
+1.ユーザーは、自分のレシピをソーシャルメディアの投稿としてアップロードすることができます。投稿には、タイトル、内容、材料
+2.各ユーザーに安全なログインと登録ページがある
+3.  ユーザーが他のソーシャルメディアの投稿を閲覧できる
+4.  
+5.  ユーザーはレシピを検索することができる。
+6.  ユーザーは自分のプロフィールページを持つことができ、プロフィールをカスタマイズすることができる。
 
 # Criteria B: Design
 
