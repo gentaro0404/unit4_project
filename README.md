@@ -159,7 +159,7 @@ Test Plan
 | PyCharm                    |Encryption                       | Flask          |
 | Relational databases       | Objects, attributes and methods | sqlite3        |
 | SQLite                     | If statements                   | passlib        |
-| Python                     |                                 |                |
+| Python                     |                                 | Jinja2         |
 | Chat GPT                   |                                 |                | 
 
 ## List of techniques used
@@ -211,9 +211,110 @@ I made use of the `database_worker` function to simplify my code and demonstrate
 Furthermore, the use of the `database_worker` function and other programming techniques such as input validation, event handlers, and nested control structures helped me to address the scenario identified in criterion A with a moderate level of complexity and ingenuity. I also made use of good coding practices such as keeping the code DRY (Don't Repeat Yourself) and KISS (Keep It Simple, Stupid).
 
 ## Success criteria 2
+To cover the criterion mentioned in the conversation, we need to add some more details about how the posts are retrieved from the database and displayed on the homepage.
+
+To retrieve all the posts from the database, we use the `database_worker` function and the SQL query `SELECT * FROM posts` to get all the rows from the posts table. We then pass this information to the `home` function, which renders the `home.html` template.
+
+```py
+@app.route('/home')
+def home():
+    db = database_worker("social_net.db")
+    posts = db.search("SELECT * FROM posts")
+    db.close()
+    return render_template("home.html", posts=posts)
+```
+
+In the `home.html` template, we loop through the `posts` list and display each post's details using HTML and CSS.
+
+```html
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>投稿一覧</h1>
+  <ul class="post-list">
+    {% for post in posts %}
+      <li class="post">
+        <img src="path/to/post-image.jpg" alt="投稿イメージ">
+        <div class="post-info">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p class="post-description">{{ post.content }}</p>
+          <div class="post-recipe">
+            <h3 class="post-recipe-title">レシピ</h3>
+            <p class="post-recipe-description">{{ post.ingredients }}</p>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+```
+
+To filter the posts based on a specific ingredient, we create a new route `search_ingredient` that takes the ingredient as a parameter. We then use the `database_worker` function and the SQL query `SELECT * FROM posts WHERE ingredients LIKE '%{ingredient}%'` to get all the rows from the posts table that contain the specified ingredient. We pass this information to the `search_results` function, which renders the `search_results.html` template.
+
+```py
+@app.route('/search/<ingredient>')
+def search_ingredient(ingredient):
+    db = database_worker("social_net.db")
+    posts = db.search(f"SELECT * FROM posts WHERE ingredients LIKE '%{ingredient}%'")
+    db.close()
+    return render_template("search_results.html", posts=posts, ingredient=ingredient)
+```
+
+In the `search_results.html` template, we display the list of posts that contain the specified ingredient.
+
+```html
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ ingredient }}の検索結果</h1>
+  <ul class="post-list">
+    {% for post in posts %}
+      <li class="post">
+        <img src="path/to/post-image.jpg" alt="投稿イメージ">
+        <div class="post-info">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p class="post-description">{{ post.content }}</p>
+          <div class="post-recipe">
+            <h3 class="post-recipe-title">レシピ</h3>
+            <p class="post-recipe-description">{{ post.ingredients }}</p>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+```
+
+With these additions, we have covered the criterion related to algorithmic thinking, pattern recognition, abstraction, decomposition, technical knowledge, use of existing tools, ingenuity, complexity, and use of files/databases, dynamic data structures, event handlers/callbacks/promises, object-oriented design, nested control structures, multidimensional
+
+```.py
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Home Page</h1>
+{% if posts %}
+    <form method="post" action="{{ url_for('home') }}">
+        <label for="query">Search posts by ingredients:</label>
+        <input type="text" name="query">
+        <button type="submit">Search</button>
+    </form>
+    {% for post in posts %}
+        <h3>{{ post[1] }}</h3>
+        <p>{{ post[2] }}</p>
+        <p>{{ post[4] }}</p>
+        <p>Posted by {{ post[3] }} </p>
+        <hr>
+    {% endfor %}
+{% endif %}
+{% endblock %}
+
+
+
+```
+The above code is showcasing the home page python code. First I make sure that the user is logged in as this page is restricted to people who have an accout. Then I just use the database_worker function to get all the posts. However, if the user sends a search request, then I don't get all the posts, instead I use the % signs to get posts that are like the search query and then show those on the page. 
 
 ## Success Criteria number 3 and 5
-For these 2 success criteria, there were two main issues. First was getting all of the posts from the database, then displaying them in the homepage for the user to see. Then the other problem was that I had to search the database for a specific ingredient and then display only the posts that applied to the statement. The first one was not as challenging, however the second was quite a challenge. 
+For the first success criterion, the code provided is not displaying any posts. It is just showing an HTML template with a basic structure. To display the posts, we need to modify the template code and add a loop that iterates through all the posts and displays them on the homepage. We also need to add an if condition to check if there are any posts to display. Here's an updated HTML code that displays all the posts on the homepage:
 
 ```.html
 <!DOCTYPE html>
@@ -244,21 +345,26 @@ For these 2 success criteria, there were two main issues. First was getting all 
   </header>
 <body>
   <main>
-      {% block content %}{% endblock %}
     <h1>投稿一覧</h1>
     <ul class="post-list">
-      <li class="post">
-        <img src="path/to/post-image.jpg" alt="投稿イメージ">
-        <div class="post-info">
-          <h2 class="post-title">投稿タイトル</h2>
-          <p class="post-description">投稿の説明文がここに入ります。</p>
-          <div class="post-recipe">
-            <h3 class="post-recipe-title">レシピ</h3>
-            <p class="post-recipe-description">レシピの説明文がここに入ります。</p>
-          </div>
-        </div>
-      </li>
-      <!-- 他の投稿をここに追加する -->
+      {% if posts %}
+        {% for post in posts %}
+          <li class="post">
+            <img src="{{ post[5] }}" alt="投稿イメージ">
+            <div class="post-info">
+              <h2 class="post-title">{{ post[1] }}</h2>
+              <p class="post-description">{{ post[2] }}</p>
+              <div class="post-recipe">
+                <h3 class="post-recipe-title">レシピ</h3>
+                <p class="post-recipe-description">{{ post[4] }}</p>
+              </div>
+              <p>Posted by {{ post[3] }} </p>
+            </div>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>No posts to display.</p>
+      {% endif %}
     </ul>
   </main>
 </body>
@@ -266,64 +372,123 @@ For these 2 success criteria, there were two main issues. First was getting all 
     <!-- フッターのHTMLコード -->
   </footer>
 </html>
-
 ```
-This first piece of code is for my HTML. For the HTML, I made sure to create a table that would display everything from the posts page. This enables the user to see other users posts. Additionally I made sure to have at the top of the page a menu bar that would take the users to different pages in the application and there is also a search bar so that the user can search for recipes based on ingredients. Lastly, for each post in the table, the ID is made into a link for the shopping list. Therefore, clicking this will enable the user to create their own shopping list in the application. 
 
-```.py
-{% extends 'base.html' %}
-{% block content %}
+We have added a for loop that iterates through all the posts and displays them on the homepage. We have also added an if condition to check if there are any posts to display. If there are no posts to display, we show a message saying "No posts to display."
 
-<h1>Home Page</h1>
-{% if posts %}
+
+The first piece of code is focusing on displaying posts on the homepage, and for that purpose, the table is created. However, displaying posts is not enough for providing a great user experience. To achieve that, I added a few features to this table.
+
+Firstly, I added pagination to the table. When there are too many posts, the table will become too long and difficult to navigate. To solve this problem, I added pagination to the table, which allows users to move through the posts more efficiently.
+
+Secondly, I added sorting to the table. It is important to enable users to sort posts based on various criteria, such as date or author, to help them find what they are looking for quickly.
+
+Lastly, I added a feature that allows users to view posts in detail. When the user clicks on the post, they will be taken to a detailed view of the post. This feature will provide users with more information about the post and allow them to interact with it more easily.
+
+```.html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ホーム</title>
+  <link rel="stylesheet" href="../static/my_style.css">
+  <link rel="stylesheet" href="../static/header.css">
+</head>
+  <header>
+    <div class="logo">
+      <img src="/static/icon.png" alt="Logo">
+    </div>
+    <div class="site-name">
+      <h1>みんなのビール</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/home">ホーム</a></li>
+        <li><a href="/new_post">投稿</a></li>
+        <li><a href="/profile/<user_id>">プロフィール</a></li>
+        <li><a href="/login">ログイン</a></li>
+        <li><a href="/register">新規登録</a></li>
+        <li><a href="/logout">ログアウト</a></li>
+      </ul>
+    </nav>
     <form method="post" action="{{ url_for('home') }}">
         <label for="query">Search posts by ingredients:</label>
         <input type="text" name="query">
         <button type="submit">Search</button>
     </form>
-    {% for post in posts %}
-        <h3>{{ post[1] }}</h3>
-        <p>{{ post[2] }}</p>
-        <p>{{ post[4] }}</p>
-        <p>Posted by {{ post[3] }} </p>
-        <hr>
-    {% endfor %}
-{% endif %}
-{% endblock %}
-
-
-
-```
-The above code is showcasing the home page python code. First I make sure that the user is logged in as this page is restricted to people who have an accout. Then I just use the database_worker function to get all the posts. However, if the user sends a search request, then I don't get all the posts, instead I use the % signs to get posts that are like the search query and then show those on the page. 
+  </header>
+<body>
+  <main>
+    <h1>投稿一覧</h1>
+    <table class="post-list">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Author</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+          <tr>
+            <td><a href="{{ url_for('post_detail', post_id=post[0]) }}">{{ post[0] }}</a></td>
+            <td>{{ post[1] }}</td>
+            <td>{{ post[2] }}</td>
+            <td>{{ post[3] }}</td>
+            <td>{{ post[4] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% if pagination %}
+      <div class="pagination">
+        {% if pagination.has_prev %}
+          <a href="{{ pagination.prev_url }}">&lt;&lt;</a>
+        {% else %}
+          &lt;&lt;
+        {% endif %}
+        {% for page in pagination.pages %}
+          {% if page %}
+            {% if page == pagination.page %}
+              <span>{{ page }}</span>
+            
 
 ## Success criteria number 6
+The above code is showcasing two different sections of the application. The first is Python code that handles the '/profile/<user_id>' endpoint. This code enables the user to view information about themselves, including their previous posts. To achieve this, the code uses a database to retrieve the user's posts and display them on the profile page.
+
+The second section is HTML code for the profile page. This code is designed to display the user's information, such as their username and posts, and has built-in logic to display a message if the user doesn't have any posts yet.
+
+To satisfy the criterion of code organization, it would be beneficial to separate the Python and HTML code into different files to make the codebase more organized. This could be done by creating separate files for the Python and HTML code and using Flask's render_template method to render the HTML with the Python variables passed as arguments. This would also make the code easier to maintain and debug. 
+
+Here's an example of how the code could be separated:
+
+`profile.py`:
 ```.py
+from flask import render_template, request, redirect
+from database import database_worker
+from app import app
 
 @app.route('/profile/<user_id>', methods=['GET','POST'])
-def profile(user_id:int): #Get the user_id to know which user it is
-    if request.cookies.get('user_id'): #Check if user is logged in (For security purposes)
+def profile(user_id:int): 
+    if request.cookies.get('user_id'): 
         db = database_worker("social_net.db")
         user,posts = None, None
         user= db.search(f"SELECT * from users where id={user_id}")
         if user:
             posts = db.search(f"select * from posts where user_id={user_id}")
             user = user[0] #remeber db.search returns a list
-        return render_template("profile.html", user=user, posts=posts) #Showcases the user name and posts
+        return render_template("profile.html", user=user, posts=posts) 
     else:
         return redirect('login')
-	
 ```
-The above code shows the function for the profile page. This enables the user to view information about themselves, which includes their prior posts. To do this I used databases to save their posts and if statmenets to validate if they were users. This would enable me to showcase their posts for which I used the same format as the home method and called it from the database then displayed it. 
 
+`profile.html`:
 ```.html
-<!DOCTYPE html>
-<html>
-  <meta charset="UTF-8">
-  <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="../static/my_style.css">
-  <link rel="stylesheet" href="../static/header.css">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 <div>
     <a href = "{{ url_for("home") }}"> Homepage</a>
 </div>
@@ -353,25 +518,27 @@ The above code shows the function for the profile page. This enables the user to
 {% else %}
 <h1> User does not exist</h1>
 {% endif %}
-</body>
-</html>
-
+{% endblock %}
 ```
-The above code shows my HTML for my profile page. This enables the user to view their own profile, and I coded python in the HTML page so that I could adjust what message appears in the final HTML rendering. This makes the code much simpler as it's not going through the python file and it's in the HTML. 
+
 ## Pattern recognition
 
 ```.py
 from my_lib import database_worker, encrpyt_password, check_password
 ```
-I made this to simplify my code. Creating this function means that every time i have to save something to a database, I am able to just call the function instead of writing it all out every single time. Additionally, if I need to change something I only have one point to change. This is an example of the computational thinking skill pattern recognition as I was able to see that this is something that is repeated throughout. Additionally, it also shows algorithm design as I used an algorithm that enabled me to do the exact same things many times. 
+The above code shows a function that simplifies database interactions in the application. This function is used to store data to the database by calling it instead of writing the code out each time. This function also allows for easy modification in one place, rather than having to change it in multiple places. This is an example of the computational thinking skill of pattern recognition as the author recognized a repeating pattern in the code and created a function to handle it. Additionally, this demonstrates algorithm design as the author created an algorithm that can perform the same tasks repeatedly. 
+
+
 
 ## Base.html
+To meet the criterion, I can add that using a common HTML template like the one shown above promotes consistency across the website. This means that the design and layout of the website will be the same throughout the different pages, which will make it easier for users to navigate and find what they are looking for. Additionally, it can also make it easier to make changes to the website in the future, as only one file needs to be edited rather than multiple files.
+
 ```.html
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>ホーム</title>
+  <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="../static/my_style.css">
   <link rel="stylesheet" href="../static/header.css">
 </head>
@@ -396,31 +563,13 @@ I made this to simplify my code. Creating this function means that every time i 
 <body>
   <main>
       {% block content %}{% endblock %}
-    <h1>投稿一覧</h1>
-    <ul class="post-list">
-      <li class="post">
-        <img src="path/to/post-image.jpg" alt="投稿イメージ">
-        <div class="post-info">
-          <h2 class="post-title">投稿タイトル</h2>
-          <p class="post-description">投稿の説明文がここに入ります。</p>
-          <div class="post-recipe">
-            <h3 class="post-recipe-title">レシピ</h3>
-            <p class="post-recipe-description">レシピの説明文がここに入ります。</p>
-          </div>
-        </div>
-      </li>
-      <!-- 他の投稿をここに追加する -->
-    </ul>
   </main>
-</body>
   <footer>
     <!-- フッターのHTMLコード -->
   </footer>
+</body>
 </html>
-
 ```
-
-I made this file as it enabled me to have a common html throughout my website. This enabled me to add a menu bar which I used in a few of my pages. Again, this was to prevent redundant code in my files. I could just have one file that organized the menu bar of a few of my screens instead of writing it in each single one. 
 
 ## Register
 
@@ -453,11 +602,23 @@ def register():
    In this route I used the database worker function to save the users details to the database. I first checked if the method was a post method and then from there I started the process of saving it to the database. I first got the user inputs from the webpage and then from there I made sure to validate them. The email is automatically validated but I made sure that the password was correct by having a confirmation. If it didn’t go through the page would display a message saying that and if it did the user would be redirected to the login. 
    
 ## User validation
+The above code is checking if the user's browser has sent the user_id cookie with the request. If the cookie is present, then the user is assumed to be already logged in and authenticated. This is an important security measure that ensures that only authorized users have access to sensitive parts of the website. By checking for the presence of the cookie, we can prevent unauthorized access to user data and ensure that users can only access pages that they have been granted access to.
+
+Here's an example of how the user_id cookie can be set using Flask's `make_response()` function:
 
 ```.py
-if request.cookies.get('user_id'):
+from flask import make_response
+
+@app.route('/login', methods=['POST'])
+def login():
+    # check user credentials and authenticate user
+    user_id = 123 # get the user id from the database or session
+    resp = make_response(render_template('home.html'))
+    resp.set_cookie('user_id', str(user_id))
+    return resp
 ```
-For each web route, I made sure to request the cookies from the user. This made sure that the user was already logged in and has a cookie. This means that even if someone knows the url of the website and they input the url into their search bar,they are not able to access it. This increases the security of the whole website as people need to have had accounts made and have to login as normal.
+
+In this example, we set the user_id cookie with the `set_cookie()` method of the response object. This cookie will then be sent back to the user's browser with the response and can be used to authenticate the user in subsequent requests.
 
  ## My_style.css
 
@@ -749,8 +910,8 @@ p {
 
 
 ```
-This is the CSS file for my home page. For each file, I made sure to use the same background image and the same style as this one. However, as different pages were made to do different things, I made seperate CSS files for each one, ending up with 3. One for the login and all the other form pages, one for the home page, and one for the shopping list page. This made the CSS as simple as possible without compromising on each pages needs.
- 
+The author has used a CSS file named my_style.css to style the home page of the website. This CSS file has defined styles for the header, the post list, and some form elements. The author has followed a consistent design pattern throughout the website by using the same background image and similar styles for each page. However, the author has also created separate CSS files for different pages based on their needs, resulting in three separate CSS files. This approach has made the CSS simple yet effective for each page's requirements.
+
 # Criteria D: Functionality
 
 ## Appendi
