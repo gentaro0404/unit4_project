@@ -34,7 +34,7 @@ Success Criteria:
 1. ウェブサイトは、ユーザーがビールのレシピや製法を投稿できるようにする必要があります（問題対処: "ビールのレシピを共有するソーシャルメディアが存在しない"）。
 2. ウェブサイトは、ホームブリューイングに関連する情報やリソースを統合し、ユーザーが簡単にアクセスできるようにする必要があります（問題対処: "醸造所に行ったり、ビールづくり体験会などに行かない限りその情報を得ることができない"）。
 3. ウェブサイトは、ユーザーが他のホームブリュワーとコミュニケーションを取り、情報や製法を共有できるようにする必要があります（問題対処: "ホームブリューイングをしている人同士でシェアすることが難しい"）。
-4. ウェブサイトは、個々のビールのオリジナリティや地域性を強調し、ユーザーがそれらの要素を探求できるようにする必要があります（問題対処: "ビールにはとても個々のオリジナリティや地域性が出るものです"）。
+4. ウェブサイトでは、ユーザー/いいね！の数/投稿時間で投稿をソートできるようにする(取り組んだ課題：「安全で整理されたプラットフォームは限られている」「チャットが非常に長くなり、振り返る際に判読できないようにする」)。
 5. ウェブサイトは、セキュアなログインと登録機能を提供し、ユーザーのプライバシーを保護する必要があります（問題対処: "セキュアで整理されたプラットフォームが限られている"）。
 6. ウェブサイトは、ユーザープロファイルページを提供し、プロファイルのカスタマイズができるようにする必要があります（問題対処: "ホームブリューイングの文化がより日本に根付かせることができます"）。
 
@@ -454,7 +454,11 @@ Lastly, I added a feature that allows users to view posts in detail. When the us
             {% if page == pagination.page %}
               <span>{{ page }}</span>
             
+```
+## Success Criteria number 4
 
+Like/Dislike System 
+Another thing my client wanted was a way to rank the posts based on how helpful they are. To do this, I added a like/dislike system to the posts. The like/dislike system is implemented by adding a like/dislike count to each post. When the user clicks on the like/dislike button, the count is updated in the database and the page is reloaded to show the updated count. The code for the like/dislike system is shown below:
 ## Success criteria number 6
 The above code is showcasing two different sections of the application. The first is Python code that handles the '/profile/<user_id>' endpoint. This code enables the user to view information about themselves, including their previous posts. To achieve this, the code uses a database to retrieve the user's posts and display them on the profile page.
 
