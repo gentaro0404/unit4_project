@@ -16,7 +16,7 @@
 データ管理の観点kら、このプロジェクトでは、ユーザーがアップロードしたレシピやその画像、データを保存・管理するためのベータベースを設計します。Pythonで実装されたバックエンドシステムが、データの追加、編集、削除などの操作を処理します。
 HTMLとCSSはウェブサイトの基本的な構造とスタイルを構築するために選択され、Pythonはバックエンドの開発のために選びました。これらの技術はプロジェクトの文脈にてきしており、開発者の経験だけでなく、多く使われている技術です。
 代替の方法として、PHPやJavaScriptなどの他のプログラミング言語を使用することもできますが、Pythonはその簡潔さと拡張性で知られており、データ処理やデータベース操作に適しています。また、PythonのフレームワークであるDjangoやFlaskは、ウェブ開発を容易にするたｍの追加機能を提供します。
-私はプロジェクトの実施に先立って、提案された解決策と使用されるツールに関する調査を行いました。HTMLとCSSはウェブデザインの基本であり、Pythonはバックエンド開発において一般的な選択肢です。また、Pythonのフレームワーク（DjangoおよびFlask）は、ウェブアプリケーション開発を容易にする追加機能を提供しており、多くの成功したプロジェクトで使用されています。
+私はプロジェクトの実施に先立って、提案された解決策と使用されるツールに関する調査を行いました。HTMLとCSSはウェブデザインの基本であり、Pythonはバックエンド開発において一般的な選択肢です。また、Pythonのフレームワーク（DjangoおよびFlask）は、ウェブアプリケーション開発を容易にする追加機能を提供しており、多くの成功したプロジェクトで使用されています。データベースは、SQLiteが適していると思います。SQLAlchemyのインターフェースは、パフォーマンスが向上し、セキュリティ攻撃から保護されているため、SQLAlchemyを選択することにしました
 さらに、類似のソーシャルメディアプラットフォームやビール愛好家向けのウェブサイトを調査し、ユーザーエクスペリエンスの良い実践方法や機能を参考にしました。これにより、私たちの提案されたソリューションが実現可能で効果的であるという確信を持つことができました。
 
 最後に、私たちはプロジェクトの成功に向けて、適切なデータ管理とプライバシー保護にも焦点を当てます。これには、データベース設計、セキュリティ対策、およびユーザーの権限管理が含まれます。このようにして、私たちのウェブベースのソーシャルメディアサイトは、日本のホームブリューイングコミュニティにとって信頼できる情報源となることが期待されます。
@@ -24,34 +24,6 @@ HTMLとCSSはウェブサイトの基本的な構造とスタイルを構築す�
 
 ### Design Statement
 私は、ホームブリューイングの情報を共有したいと思っているビール愛好家のクライアント向けに、ウェブベースのソーシャルメディアサイトを設計・制作します。このSNSは、ビールのレシピや独自の製法を共有・閲覧することを目的としており、CSS、HTML、およびPythonを使用して構築されます。制作期間は4週間を見込み、評価基準A、B、C、D、およびEに従って評価されます。"
-
-
-### System Overview
-
-The application will be developed in PyCharm version 2022.3.2 (Professional Edition) and will use the macOS Ventura version 13.0.1 operating system on a 2021 MacBook Air M1. It will use Python as the primary programming language and will employ KivyMD to create a user-friendly graphical interface. SQLAlchemy will be used to manipulate and manage the application's database.
-
-### Software Justification
-
-Python
-
-Python will be used as the primary programming language for several reasons. Firstly, Python is a high-level, interpreted programming language with a simple syntax that is easy to understand, making it an excellent choice for beginners. Additionally, Python is one of the fastest-growing programming languages, with a vast online community and a plethora of resources available to aid in its development<sup>[[1]](https://www.datacamp.com/blog/top-programming-languages-for-data-scientists-in-2022)</sup>. Secondly, Python is a language that I am most comfortable coding in, and its object-oriented programming framework is modular and flexible, making it ideal for this project<sup>[[2]](https://www.educba.com/advantages-of-oop/)</sup>.
-
-KivyMD
-
-KivyMD will be used to create the graphical user interface for the application. It is an open-source library that can create beautiful and user-friendly graphical user interfaces. The GUI is essential in enabling the user to interact with the application and perform tasks such as adding, editing, and deleting songs, creating playlists, and sorting songs based on different categories.<sup>[[3]](https://kivy.org/)</sup>
-
-SQLAlchemy
-
-SQLAlchemy will be used to manipulate the database for the following reasons. Firstly, it is a Python SQL toolkit and Object Relational Mapper that provides developers with the full power and flexibility of SQL"<sup>[[4]](https://www.sqlalchemy.org/)</sup>.. As a result, I can take advantage of the SQL programming language, which is commonly used for managing databases<sup>[[5](https://www.w3schools.com/sql/sql_intro.asp)</sup>. Secondly, SQLAlchemy is an ORM, which allows me to manipulate and query data from the database using Python, my native programming language. This is beneficial since it eliminates the need to learn SQL, making development faster and more efficient<sup>[[6]](https://talentopia.global/back-end/orm-vs-plain-sql-which-should-you-choose-and-when)</sup>.
-
-In conclusion, the proposed solution will address Daiichiro's need for a music management application that is more efficient than traditional analog methods. By utilizing Python, KivyMD, and SQLAlchemy, the application will be able to provide a user-friendly interface while allowing the user to organize their favorite songs easily.
-
-
-**Design statement**  
-
-
-
-[^1]: Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python/.
 
 
 
@@ -135,19 +107,20 @@ The database_worker class in the figure provides methods for establishing a conn
 
 ## Test Plan
 
-| Description                          | Test Type              | Input | Anticipated Outcome |
-| ----------                           | ---------  |------- | ------------------- |
-| Test for Regisraration               |Unit test   |1. Run login.py file 2. Click the Register button on the application screen 3. Input the appropiate information in each textfield following the hint text 4. Click register |After clicking the Register button, if the user already exists, a pop-up message will appear informing you that the user name already exists. If the password entered does not match the confirmation password, a red message will appear informing you that the passwords do not match. If all instructions have been followed correctly, you will be returned to the login screen.|
-| Test for Login System                |Unit test   |1. Run login.py file 2. Follow instructions and enter the appropiate information in each textfield following the hint text 3. Click Login 4|After clicking Login, if the account does not exist, it will inform you that the account could not be found. If account information exists, the home page should appear.|
-| Test for Logout System               |Unit test   |1. Login 2. Press the logout button on the homepage| When the logout button is pressed, it should direct the user back to the log in screen|
-| Test for Adding System               |Unit test   |1. log in 2. click the add songs button 3. follow the hint text and enter the appropriate information in the text field 4. press the add songs button | Once the user has correctly entered the information, a pop-up message will appear informing the user that the flight has been added 5. If the information entered in the text field is incorrect, red hint text will appear to inform the user that the information entered is incorrect.
-| Test for songs database              |Integration test|1. Login 2. Click Add  button 3. Enter the appropiate songs information in the textfields accordingly to the hint text. 4. Press add flight button 5. Open unit3project.db and go to songs table|When Songs is added, it should be stored in project3_db and stored in the table. Each time a user adds a flight, its project3_db should be updated and appear in the songs table.|
-| Test for Table system                |Unit test|1. Login 2. Click tabel button|When the table button is clicked, it should direct the user to another page that displays a table of all past and recent songs information entered from the user.|
-| Test for Table url system            |Unit test|1.login 2.Click table's url | Clicking on the URL displayed in the table will open a new window in your browser.
-| Test for delete funcrion table screen|Unit test|1. Login 2. Click table button 3. Select a row 4. Click delete selected flight(s) button| If the user clicks on the checkbox next to a flight, a checkmark should appear in the box. The user then clicks on the Delete Flight button and the selected flight will be removed from the table. And if the deletion is successful, a popup will appear|
-| Test for add function table screen.  |Unit test|1.1. Login 2. Click Addbutton 3. Enter the appropiate flight information in the textfields accordingly to the hint text. 4. Press addbutton | If the user enters the information correctly, a pop-up message will appear telling the user that the flight has been added. If the information in the text field is incorrect, red error hint text will appear indicating that the information entered is incorrect.|
-| Test for Search Screeen              |Unit test|1. Login 2. Click Search button 3. Enter the appropiate information in the textfields accordingly to the hint text 4. Press the search button|When a user enters information about the song they are searching for, their multiple tables will be displayed. The user can look up all the listed information: song title, release date, artist name, album name, genre, and song link. If the information entered is incorrect, an error hint text will be displayed informing the user that the information does not exist. The information displayed on the table should be retrieved from the database and the correct information retrieved by the user.|
-| Test for Code Review                 |Code Review|Check for proper comments, function names, and variable names: 1. Open the login.py file; 2. Review the code and change or add comments where necessary.|Revised version of the code that is easy to follow and understand|
+Test Plan
+
+| Type                | Description                | Process                                                      | Anticipated Outcome                                          |
+| ------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Unit Testing        | User Registration          | 1. Open the website<br/>2. Click on the register button<br/>3. Enter a valid username and password, and click the register button | The modal should disappear and a flash message should appear stating that the user has been registered successfully. |
+| Unit Testing        | User Login                 | 1. Open the website<br />2. Enter valid credentials and click the login button on the login card | The user should be redirected to the dashboard page of the website if the user exists and the password matches the hash in the database. |
+| Unit Testing        | Logout                     | 1. Open the website<br />2. Login using valid credentials<br />3. Click the log out button on the top bar | The user should be redirected back to the login screen and the session token should be removed from the session storage if checked using "Inspect". |
+| Integration Testing | Login and Registration     | 1. Open the website<br />2. Follow the instructions for registering a user above<br />3. Follow the instructions for logging in above using the same credentials that were registered with<br /> | If the user followed the instructions properly and registered for a user, then the user should be able to login with the same credentials that were just registered with. |
+| Unit Testing        | Changing Password          | 1. Open the website<br />2. Login using valid credentials<br />3. Click on the my profile button on the header<br />4. Click the change password button<br />5. Input the current password of the current user and put a new password<br />6. Click Confirm | If the user followed the instructions properly and no errors occurred in the process, then the user should be able to logout and log back into the same user with the same username but with the new password. |
+| Unit Testing        | Adding new post            | 1. Open the website<br />2. Login using valid credentials<br />3. Click New Post on the header<br />4. Fill in the required fields for a new post<br />5. Click the submit button | The user should be redirected to their own profile page, where they can see their own posts, including the one they just posted. |
+| Unit Testing        | Like/Dislike a post        | 1. Open the website<br />2. Login using valid credentials<br />3. Click on the like button of a post<br />4. Click on the dislike button of another post | The user should be able to see the like count of the post increase by 1 for the first post and decrease by 1 for the second one. |
+| Integration Testing | Adding Post / Viewing Post | 1. Open the website<br />2. Login using valid credentials<br />3. Create a new post following the instructions above<br />4. Click the home button | The user should be able to see the post they just created on the top of the dashboard. |
+| Unit Testing        | Sorting System             | 1. Open the website<br />2. Login using valid credentials<br />3. Change the sorting method to sort by like count on the dashboard using the dropdown on the right | The user should be able to see posts sorted by the highest like count. |
+| Code Review         | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriately | Easy to understand and easy to debug code for future development. |
 
 
 # Criteria C: Development
