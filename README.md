@@ -1,4 +1,4 @@
-# Unit ４ Project: home brewry lecip 
+# Unit ４ Project: home brewry Recipe
 
  ## Criteria A: Planning
 
@@ -182,7 +182,8 @@ Test Plan
 | Relational databases       | Objects, attributes and methods | sqlite3        |
 | SQLite                     | If statements                   | passlib        |
 | Python                     |                                 | Jinja2         |
-| Chat GPT                   |                                 |                | 
+| Chat GPT                   |
+| copilot                    |                
 
 ## List of techniques used
 1. Flask library/routes
@@ -710,17 +711,9 @@ The author has used a CSS file named my_style.css to style the home page of the 
 
 # Criteria D: Functionality
 
-## Appendi
+## Appendix
 ![](pic_jpg.png)
 This is proof of client approval of proposed Success Criteria
-
-## Citations
-1.Luna, J. C. (2022, January 21). Top programming languages for Data Scientists in 2022. DataCamp. Retrieved March 10, 2023, from https://www.datacamp.com/blog/top-programming-languages-for-data-scientists-in-2022 
-2.Advantages of OOP: Explore the top 9 advantages of OOP. EDUCBA. (2022, June 23). Retrieved March 10, 2023, from https://www.educba.com/advantages-of-oop/ 
-3.KIVY: Cross-platform Python Framework for nui. Cross-platform Python Framework for GUI apps Development. (n.d.). Retrieved March 10, 2023, from https://kivy.org/ 
-4.The Python SQL Toolkit and Object Relational Mapper. SQLAlchemy. (n.d.). Retrieved March 10, 2023, from https://www.sqlalchemy.org/ 
-5.Introduction to SQL. SQL Introduction. (n.d.). Retrieved March 10, 2023, from https://www.w3schools.com/sql/sql_intro.asp 
-6.Top 2% extraordinary talent on demand™. Talentopia. (n.d.). Retrieved March 10, 2023, from https://www.talentopia.com/ 
 
 ## Demonstration Video
 https://vimeo.com/825750679?share=copy
@@ -766,18 +759,21 @@ The client was pleased with the final product as it met all their requirements. 
 
 # Appendix
 
-[](Assets/SuccessCriteriaConfirm.jpg)
+![](pic1.jpg)
 
-**Appendix.2** *Contact between developer and client approving success criteria*
+**Appendix.1** *Contact between developer and client approving success criteria*
 
-![](Assets/ClientEvaluation.jpg)
+![](pic2.jpg)
 
-**Appendix.3** *Contact between developer and client for evaluation of website*
+**Appendix.2** *Contact between developer and client for evaluation of website*
 
-![](Assets/PeerEvaluation2.jpg)
+![](pic3.jpg)
 
-**Appendix.4** *Contact between developer and peer for evaluation of website*
+**Appendix.4** *Contact between developer and client regarding beta testing and feedback*
 
-![](Assets/ClientBeta.jpg)
+## Citations
 
-**Appendix.5** *Contact between developer and client regarding beta testing and feedback*
+[^1]: “HTML vs JavaScript: Which Should You Learn?” Hackr.io, https://hackr.io/blog/html-vs-javascript. 
+[^2]: “HTML vs JavaScript: Top 8 Most Amazing Comparison You Need to Know.” EDUCBA, 3 Mar. 2023, https://www.educba.com/html-vs-javascript/. 
+[^3]: User, Devmountain. “What Is CSS and Why Should You Use It?” Devmountain, 22 Apr. 2019, https://devmountain.com/blog/what-is-css-and-why-use-it/#:~:text=CSS%20makes%20the%20front%2Dend,for%20font%20color%20and%20more. 
+[^4]: Korsun, Julia. “The 16 Most Important Pros and Cons of Using Python for Web Development.” Software Development Blog &amp; IT Tech Insights | Django Stars, 10 Feb. 2023, https://djangostars.com/blog/python-web-development/. 
