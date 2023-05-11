@@ -9,17 +9,25 @@ The problem I am currently facing is that my business is centered around home br
 ## Proposed Solution
 To solve the client's problem I will be creating a website using HTML CSS and Python. The site will have a login and sign up system to allow for multiple users. It is a platform for users to share beer recipes and unique brewing methods. The site will also allow users to share information such as ingredients and other information.
 
-## Raatinale for propsed solution
+## Ratinale for propsed solution
 
 This project will provide a solution to a problem where home brewing culture is not yet common in Niobraska. Web-based social media sites make it easy to share information and methods, and it is expected to create a rounded community of people interested in homebrewing.
 As mentioned in the problem statement, it is currently difficult to obtain information on home brewing in Japan. This web-based social media will provide a place where people can easily share information and ideas about information and methods.
 From a data management perspective, this project will design a beta base to store and manage user-uploaded recipes, their images, and data, with a back-end system implemented in Python to handle operations such as adding, editing, and deleting data.
 HTML and CSS were chosen to build the basic structure and style of the website, while Python was chosen for the back-end development. These technologies are in the context of the project and are widely used as well as the experience of the developers.
-As an alternative, other programming languages such as PHP or JavaScript could be used, but Python is known for its simplicity and extensibility, and is well suited for data processing and database manipulation. In addition, Python frameworks such as Django and Flask provide additional functionality to facilitate web development.
-Prior to the implementation of the project, I conducted research on the proposed solution and the tools to be used: HTML and CSS are fundamental to web design, and Python is a common choice for back-end development. In addition, Python frameworks (Django and Flask) provide additional features that facilitate web application development and are used in many successful projects. For the database, SQLite would be a good choice, as SQLAlchemy's interface offers better performance and is protected against security attacks
-In addition, we researched similar social media platforms and beer enthusiast websites for good user experience practices and features. This gave us confidence that our proposed solution would be feasible and effective.
+As an alternative, other programming languages such as PHP or JavaScript could be used, but Python is known for its simplicity and extensibility, and is well suited for data processing and database manipulation. In addition, Python frameworks such as Django and Flask provide additional functionality to facilitate web development. [^1][^2]
 
-Finally, we would also focus on proper data management and privacy protection to ensure the success of the project. This includes database design, security measures, and user rights management. In this way, our web-based social media sites are expected to become a trusted source of information for the Japanese homebrewing community.
+Prior to the implementation of the project, I conducted research on the proposed solution and the tools to be used: HTML and CSS are fundamental to web design, and Python is a common choice for back-end development. In addition, Python frameworks (Django and Flask) provide additional features that facilitate web application development and are used in many successful projects. For the database, SQLite would be a good choice, as SQLAlchemy's interface offers better performance and is protected against security attacks
+In addition, we researched similar social media platforms and beer enthusiast websites for good user experience practices and features. This gave us confidence that our proposed solution would be feasible and effective.[^3]
+
+Finally, we would also focus on proper data management and privacy protection to ensure the success of the project. This includes database design, security measures, and user rights management. In this way, our web-based social media sites are expected to become a trusted source of information for the Japanese homebrewing community. [^4]
+
+
+[^1]: “HTML vs JavaScript: Which Should You Learn?” Hackr.io, https://hackr.io/blog/html-vs-javascript. 
+[^2]: “HTML vs JavaScript: Top 8 Most Amazing Comparison You Need to Know.” EDUCBA, 3 Mar. 2023, https://www.educba.com/html-vs-javascript/. 
+[^3]: User, Devmountain. “What Is CSS and Why Should You Use It?” Devmountain, 22 Apr. 2019, https://devmountain.com/blog/what-is-css-and-why-use-it/#:~:text=CSS%20makes%20the%20front%2Dend,for%20font%20color%20and%20more. 
+[^4]: Korsun, Julia. “The 16 Most Important Pros and Cons of Using Python for Web Development.” Software Development Blog &amp; IT Tech Insights | Django Stars, 10 Feb. 2023, https://djangostars.com/blog/python-web-development/. 
+
 
 
 ### Design Statement
@@ -54,14 +62,9 @@ It serves as a visual representation of the system and its components, and their
 
 ## Data Storage
 
-![](55.jpg)
+![](54.jpg)
 
 **Fig.2** *ER diagram of the Website*
-
-
-## Wireframe
-
-![](54.jpg)
 
 **Fig.3** *Example of data entry in the Post table*
 
@@ -75,7 +78,29 @@ It serves as a visual representation of the system and its components, and their
 **Fig 5** *Example of data entry in the User table*
 
 ![](data3.png)
-**Fig.6** *Wireframe of the website*
+
+
+## UML Diagram
+
+![](55.jpg)
+
+**Fig.5** *UML Diagram of the website*
+
+
+## Wireframe
+
+![](53.jpg)
+**Fig.7** *Example of data entry in the Post table*
+
+## Flowcharts 
+![](56.jpg)
+**Fig 8** The first flowchart shows my login page
+
+![](57.jpg)
+**Fig 9** The second flowchart shows my home page
+
+![](58.jpg)
+**Fig 10** The threed floechart my like system
 
 
 ## Record of Tasks
@@ -132,8 +157,6 @@ It serves as a visual representation of the system and its components, and their
 
 
 ## Test Plan
-
-Test Plan
 
 Test Plan
 
@@ -681,236 +704,6 @@ body {
   font-family: sans-serif;
 }
 
-/* ヘッダーのスタイル */
-header {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-.logo img {
-  max-height: 60px;
-}
-
-.site-name h1 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin-left: 20px;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-nav a:hover {
-  color: #000;
-}
-
-/* 投稿一覧のスタイル */
-.post-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 80px auto;
-  max-width: 800px;
-  padding: 0;
-  list-style: none;
-}
-
-.post {
-  margin: 10px;
-  padding: 10px;
-  width: calc(33.33% - 20px);
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.post img {
-  width: 100%;
-  height: auto;
-}
-
-.post-info {
-  padding: 10px;
-}
-
-.post-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.post-description {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #888;
-}
-
-.post-recipe-title {
-  margin: 10px 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.post-recipe-description {
-  margin: 0;
-  font-size: 14px;
-}
-
-/* フォーム全体のスタイル */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  font-size: 18px;
-}
-
-/* 各inputのスタイル */
-input {
-  padding: 8px 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 16px;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-}
-
-/* ラベルのスタイル */
-label {
-  margin-right: 16px;
-}
-
-/* ボタンのスタイル */
-input[type="submit"] {
-  background-color: #0095f6;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-/* ボタンを押したときのスタイル */
-input[type="submit"]:active {
-  background-color: #0078d7;
-}
-
-/* メッセージのスタイル */
-p {
-  color: red;
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.post-card {
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-
-.post-card .title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.post-card .content {
-  margin-bottom: 10px;
-}
-
-.post-card .ingredients {
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.post-card .user {
-  color: #8e8e8e;
-  font-size: 0.9rem;
-}
-
-.post-card .like-count {
-  color: #8e8e8e;
-  font-size: 0.9rem;
-}
-
-.post-card .like-btn {
-  background-color: transparent;
-  border: none;
-  color: #8e8e8e;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 10px;
-  padding: 0;
-}
-
-.post-card .like-btn:hover {
-  color: #ed4956;
-}
-
-.post-card .like-btn:focus {
-  outline: none;
-}
-
-.post-card .comment-btn {
-  background-color: transparent;
-  border: none;
-  color: #8e8e8e;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0;
-}
-
-.post-card .comment-btn:hover {
-  color: #3897f0;
-}
-
-.post-card .comment-btn:focus {
-  outline: none;
-}
-
-.post-card .comments {
-  margin-top: 10px;
-}
-
-.post-card .comment {
-  margin-bottom: 5px;
-}
-
-.post-card .comment .user {
-  color: #262626;
-  font-weight: 600;
-}
-
-.post-card .comment .content {
-  color: #262626;
-}
-
 
 ```
 The author has used a CSS file named my_style.css to style the home page of the website. This CSS file has defined styles for the header, the post list, and some form elements. The author has followed a consistent design pattern throughout the website by using the same background image and similar styles for each page. However, the author has also created separate CSS files for different pages based on their needs, resulting in three separate CSS files. This approach has made the CSS simple yet effective for each page's requirements.
@@ -930,8 +723,9 @@ This is proof of client approval of proposed Success Criteria
 6.Top 2% extraordinary talent on demand™. Talentopia. (n.d.). Retrieved March 10, 2023, from https://www.talentopia.com/ 
 
 ## Demonstration Video
-https://youtu.be/5navJ4zjRzw
+https://vimeo.com/825750679?share=copy
 
+The planning for the video is in the appendix.
 # Critieria E: Evaluation
 
 ## Evaluation table
