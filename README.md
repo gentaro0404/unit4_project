@@ -764,5 +764,20 @@ The client was pleased with the final product as it met all their requirements. 
 2. Sorting by Code Language - An option to filter by code language could be added to make it easier for users with specific language needs to find relevant code.
 3. Limiting Likes - Limiting likes to one per user per post could reduce the potential for spamming and provide a more accurate rating of the quality of the code being posted.
 
+# Appendix
 
+[](Assets/SuccessCriteriaConfirm.jpg)
 
+**Appendix.2** *Contact between developer and client approving success criteria*
+
+![](Assets/ClientEvaluation.jpg)
+
+**Appendix.3** *Contact between developer and client for evaluation of website*
+
+![](Assets/PeerEvaluation2.jpg)
+
+**Appendix.4** *Contact between developer and peer for evaluation of website*
+
+![](Assets/ClientBeta.jpg)
+
+**Appendix.5** *Contact between developer and client regarding beta testing and feedback*
