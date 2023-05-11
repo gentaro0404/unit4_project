@@ -934,3 +934,44 @@ This is proof of client approval of proposed Success Criteria
 
 ## Demonstration Video
 https://youtu.be/5navJ4zjRzw
+
+# Critieria E: Evaluation
+
+## Evaluation table
+
+### Client (Record of this is in the appendix) 
+| Critieria | Met or not?        | Feedback       |
+|----------------------------|---------------------------------|----------------|
+|1. The user can upload their own recipes as a social media post. The post includes the title, content and ingredients  |Met      |Met, no suggestions	|
+|2. There is a secure login and registration page for each user  | 	Met	| Met, no suggestions		| 
+|3. The user can view other social media posts   | Met		| Nice posts, however, could it be possible to have images on each posts to see the recipe  | 
+|4. Users are able to create their own shopping list in the app  | Met		| Make the adding function more intuitive and make the shopping list look a little better| 
+|5. Users can search recipes based on ingredients  | Met		|Specify that it is search by ingredient 			| 
+|6. User can have their own profile page that displays their email and posts.   | Met			| Add a button to the shopping list		| 
+
+### Other user (Record of this is in the appendix) 
+| Critieria | Met or not?        | Feedback       |
+|----------------------------|---------------------------------|----------------|
+|1. The user can upload their own recipes as a social media post. The post includes the title, content and ingredients  |Met      |Good		|
+|2. There is a secure login and registration page for each user  | 	Met	| Good		| 
+|3. The user can view other social media posts   | Met		| Add the names of the people who posted the recipe		| 
+|4. Users are able to create their own shopping list in the app  | Met		| Make how to add more clear since it is quite confusing 			| 
+|5. Users can search recipes based on ingredients  | Met		|Specify that it is search by ingredient 			| 
+|6. User can have their own profile page that displays their email and posts.   | Met			| Make the username a bit more visible			| 
+
+This was after I showed this to an anonymous student here at my school to get their feedback on the project.
+
+## Peer Evaluation
+
+My peer (see Appendix 4) was very satisfied with the project and confirmed that all the success criteria were met. One potential improvement that was suggested was the addition of a code language filter on the home page to make it easier to sort through the code.
+
+## Extensibility
+
+The client was pleased with the final product as it met all their requirements. After further discussion, we identified several potential extensions:
+
+1. Commenting System - Adding a commenting system to the posts would allow users to provide their own opinions and feedback on the code. This could be implemented using a new table in the database.
+2. Sorting by Code Language - An option to filter by code language could be added to make it easier for users with specific language needs to find relevant code.
+3. Limiting Likes - Limiting likes to one per user per post could reduce the potential for spamming and provide a more accurate rating of the quality of the code being posted.
+
+
+
