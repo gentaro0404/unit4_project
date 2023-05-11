@@ -84,13 +84,13 @@ It serves as a visual representation of the system and its components, and their
 
 ![](55.jpg)
 
-**Fig.5** *UML Diagram of the website*
+**Fig.6** *UML Diagram of the website*
 
 
 ## Wireframe
 
 ![](53.jpg)
-**Fig.7** *Example of data entry in the Post table*
+**Fig.7** *This shows the wireframe for my project. Before starting the code, I tried to visualize how my website would look as then I would be able to design it much easier and I was able to show this to the client for feedback*
 
 ## Flowcharts 
 ![](56.jpg)
