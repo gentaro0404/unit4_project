@@ -44,43 +44,40 @@ Success Criteria:
 
 ## System Diagram
 
-![](49.jpg)
-<i>Fig. １</i> This is the wireframe for the application. 
+
+
+![](Project_4_system_diagram.jpg)
+
+**Fig.1** *System diagram of the Website*
 
 It serves as a visual representation of the system and its components, and their relationships to each other. As shown above, the application will run on Python and KivyMD. The application will have various inputs from the user, which will all be stored within a database using SQLite. All of this will be executed within the Pycharm application, which will then display the output on a screen
 
+## Data Storage
 
+![](55.jpg)
+
+**Fig.2** *ER diagram of the Website*
 
 
 ## Wireframe
 
-![](IMG_1318.JPG)
-<i>Fig. 2</i> This is the wireframe for the application. 
+![](54.jpg)
 
-As shown in Figure 2, the wireframe details the appearance of the application. The wireframe also details the plan for how the different screens will be displayed by the different buttons. Arrows extending from the buttons to the screen serve to indicate which screen will open when the user presses and then releases the button. With two exceptions, the "Search Flight" screen and the "Table" screen will open whichever browser opens and jumps to the URL when the user clicks on the "Search" (search flight screen) or "Table View" URL. The purpose of this wireframe diagram is to visually represent the user interface design outlining the structure and layout of the application.
-
-## ER Diagram
-![](IMG_1320.JPG)
-<i>Fig. 3</i> This is the wireframe for the application. 
-
-## UML Diagram
-![](UML.png)
-<i>Fig. 5</i> This is the wireframe for the application. 
-This is a UML diagram of the application, showing the classes and methods used in its development. The diagram contains two main parent classes: MDApp and MDScreen. All subclasses inherit methods and attributes from these parent classes, as indicated by the arrows in the diagram.
-
-The database_worker class in the figure provides methods for establishing a connection to the SQLite3 database, retrieving information in the database, saving information to the database, and closing the connection to the database.
-
-## Flow diagram
-![](flow1.png)
-<i>Fig. 5</i> This is the wireframe for the application. 
+**Fig.3** *Example of data entry in the Post table*
 
 
-![](flow2.png)
-<i>Fig. 6</i> This is the wireframe for the application. 
+![](Project_4_system_diagram.jpg)
+
+**Fig.4** *Example of data entry in the User table*
+
+![](Project_4_system_diagram.jpg)
+
+**Fig 5** *Example of data entry in the User table*
+
+![](Project_4_system_diagram.jpg)
+**Fig.6** *Wireframe of the website*
 
 
-![](flow3.png)
-<i>Fig. 7</i> This is the wireframe for the application. 
 ## Record of Tasks
 
 | Task No | Planned Action                                            | Planned Outcome                                                                                                     | Time estimate | Target completion date | Criterion |
