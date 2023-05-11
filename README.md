@@ -66,15 +66,15 @@ It serves as a visual representation of the system and its components, and their
 **Fig.3** *Example of data entry in the Post table*
 
 
-![](Project_4_system_diagram.jpg)
+![](data1.png)
 
 **Fig.4** *Example of data entry in the User table*
 
-![](Project_4_system_diagram.jpg)
+![](data2.png)
 
 **Fig 5** *Example of data entry in the User table*
 
-![](Project_4_system_diagram.jpg)
+![](data3.png)
 **Fig.6** *Wireframe of the website*
 
 
