@@ -36,8 +36,8 @@ Success Criteria:
 2. the website needs to integrate information and resources related to homebrewing and make them easily accessible to users (problem addressed: "Accessing such information is currently only possible by visiting breweries or attending beer making experience sessions")
 3. the website needs to allow users to communicate with other homebrewers and share information and methods (problem addressed: "it is difficult for home brewers to exchange information and methods with each other.”)
 4. the website should be able to sort the number of users/likes! numbers to be able to sort (problem addressed: making it difficult to determine the quality of the recipes found online).
-５. the website should provide secure login and registration capabilities and protect user privacy (problem addressed: "there are currently limited platforms that are secure, organized, and safe for sharing such information and methods among home brewers").
-６. the website needs to provide a user profile page and allow for customization of profiles (issue addressed: "home brewing culture is not well-established in Japan.").
+5. the website should provide secure login and registration capabilities and protect user privacy (problem addressed: "there are currently limited platforms that are secure, organized, and safe for sharing such information and methods among home brewers"). 
+6. the website needs to provide a user profile page and allow for customization of profiles (issue addressed: "home brewing culture is not well-established in Japan.").
 
 
 # Criteria B: Design
